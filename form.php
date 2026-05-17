@@ -38,4 +38,26 @@ function getErrorMessage($field) {
     }
     return '';
 }
+
+// Функция для проверки выбранного языка
+function isLanguageSelected($lang, $formData) {
+    $selected_langs = $formData['languages'] ?? [];
+    return in_array($lang, $selected_langs) ? 'selected' : '';
+}
+
+// Функция для проверки radio button
+function isRadioChecked($value, $formData) {
+    $currentValue = $formData['gender'] ?? 'unspecified';
+    return $currentValue == $value ? 'checked' : '';
+}
+
+// Функция для проверки checkbox
+function isCheckboxChecked($formData) {
+    return isset($formData['contract']) && $formData['contract'] == 'on' ? 'checked' : '';
+}
+
+// Функция для безопасного вывода
+function safeOutput($value) {
+    return htmlspecialchars($value ?? '');
+}
 ?>
