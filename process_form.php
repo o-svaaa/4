@@ -4,9 +4,9 @@ ini_set('display_errors', 1);
 
 // Настройки подключения к БД
 $host = 'localhost';
-$dbname = 'u82671';
-$username = 'u82671';
-$password = '1266050';
+$dbname = 'u82814';
+$username = 'u82814';
+$password = '3096918';
 
 // Функция для безопасного получения POST данных
 function getPostValue($key, $default = '') {
