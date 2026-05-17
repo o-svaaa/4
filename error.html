@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="result-container">
+        <div class="result-card error">
+            <div class="result-icon">❌</div>
+            <h1>Ошибка сохранения данных</h1>
+            <p>К сожалению, произошла ошибка при сохранении данных в базу данных.</p>
+            
+            <div class="error-details" id="errorMessage">
+                Загрузка сообщения об ошибке...
+            </div>
+            
+            <a href="form.html" class="back-btn">← Вернуться к форме</a>
+        </div>
+    </div>
+    
+    <script>
+        // Получаем сообщение об ошибке из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorMessage = urlParams.get('message');
+        if (errorMessage) {
+            document.getElementById('errorMessage').textContent = 'Техническая информация: ' + decodeURIComponent(errorMessage);
+        } else {
+            document.getElementById('errorMessage').textContent = 'Неизвестная ошибка. Пожалуйста, попробуйте позже.';
+        }
+    </script>
+</body>
+</html>
