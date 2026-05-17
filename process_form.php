@@ -187,7 +187,7 @@ foreach ($validationResults as $field => $result) {
 // Если есть ошибки - сохраняем в Cookies и возвращаем на форму
 if (!empty($errors)) {
     saveErrorsToCookies($errors);
-    header('Location: index.html');
+    header('Location: index.php');
     exit;
 }
 
